@@ -7,6 +7,7 @@ bool solve(int n, vector<int>& a) {
     
     sort(a.begin(), a.end());
     
+    
     for (int i = 0; i < n - 1; ++i) {
         if (a[i + 1] - a[i] > 1) {
             return false; 
@@ -32,9 +33,9 @@ int main() {
             
             
             if (solve(n, a)) {
-                cout << endl;
+                cout << "YES"<<endl;
             } else {
-                cout << endl;
+                cout << "NO"<<endl;
             }
         }
     }
