@@ -4,18 +4,18 @@
 using namespace std;
 
 
-int count_advancers(int n, int k, const vector<int>& scores) {
-    int target_score = scores[k - 1];
-    int advancers = 0;
+int count_advancers(int n, int k, vector<int>& scores) {
+    int t = scores[k - 1];
+    int adv = 0;
 
     for (int i = 0; i < n; ++i) {
-        if (scores[i] >= target_score && scores[i] > 0) {
-            advancers++;
+        if (scores[i] >= t && scores[i] > 0) {
+            adv++;
         } else {
             break;
         }
     }
-    return advancers;
+    return adv;
 }
 
 int main() {
@@ -29,9 +29,9 @@ int main() {
     }
 
     
-    int result = count_advancers(n, k, scores);
+    int res = count_advancers(n, k, scores);
 
-    cout << result << "\n";
+    cout << res << endl;
 
     return 0;
 }
